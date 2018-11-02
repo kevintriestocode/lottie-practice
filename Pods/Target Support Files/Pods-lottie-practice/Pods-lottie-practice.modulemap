@@ -1,0 +1,6 @@
+framework module Pods_lottie_practice {
+  umbrella header "Pods-lottie-practice-umbrella.h"
+
+  export *
+  module * { export * }
+}
