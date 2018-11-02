@@ -8,14 +8,39 @@
 
 import UIKit
 import Lottie
+import Alamofire
+import SnapKit
 
 class ViewController: UIViewController {
-  var URL: URL!
+  var webURL: URL!
+  var animationView: LOTAnimationView!
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    webURL = URL(string: "https://www.lottiefiles.com/storage/datafiles/RCNn6rnkYkbg0RI/data.json")
+
+    animationView = LOTAnimationView(contentsOf: webURL)
+    view.backgroundColor = .white
+    view.addSubview(animationView)
+
+    animationView.isUserInteractionEnabled = true
+    let tap = UITapGestureRecognizer(target: self, action: #selector(tapHeart))
+    animationView.addGestureRecognizer(tap)
+    animationView.snp.makeConstraints { make in
+      make.center.equalTo(view)
+      make.size.equalTo(300)
+    }
+//    animationView.loopAnimation = true
+//    animationView.play()
   }
 
-
+  @objc func tapHeart() {
+    guard animationView.animationProgress != 1 else {
+      self.animationView.play(fromProgress: 1, toProgress: 0, withCompletion: nil)
+      return
+    }
+    self.animationView.play()
+  }
 }
 
