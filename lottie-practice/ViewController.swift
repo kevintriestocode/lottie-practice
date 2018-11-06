@@ -17,10 +17,13 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    let fileURL = Bundle.main.path(forResource: "heart", ofType: "json")
     webURL = URL(string: "https://www.lottiefiles.com/storage/datafiles/RCNn6rnkYkbg0RI/data.json")
 
-    animationView = LOTAnimationView(contentsOf: webURL)
+//    animationView = LOTAnimationView(contentsOf: webURL)
+    if let heart = fileURL {
+      animationView = LOTAnimationView(filePath: heart)
+    }
     view.backgroundColor = .white
     view.addSubview(animationView)
 
