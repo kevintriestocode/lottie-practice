@@ -9,6 +9,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Crashlytics
+  - Fabric
   - lottie-ios
   - SnapKit
 
@@ -27,6 +28,6 @@ SPEC CHECKSUMS:
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
-PODFILE CHECKSUM: bc83cf7ffcf920d7750c6c8b734c0c3c3e0b7117
+PODFILE CHECKSUM: c6cf9e1f647f10df914bb996a3d7f77a347e57f8
 
 COCOAPODS: 1.5.3

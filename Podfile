@@ -7,6 +7,7 @@ target 'lottie-practice' do
   pod 'lottie-ios'
   pod 'SnapKit'
   pod 'Alamofire'
+  pod 'Fabric'
   pod 'Crashlytics'
   # Pods for lottie-practice
 
